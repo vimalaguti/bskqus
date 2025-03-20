@@ -3,15 +3,11 @@
   "name": "Bsky Link Previewer",
   "version": "1.0",
   "description": "Embed previews for bsky.app links in Disqus comments.",
+  "homepage_url": "https://github.com/vimalaguti/bskqus",
   "browser_action": {
     "default_title": "Bsky Link Previewer",
     "default_popup": "popup.html",
     "default_icon": "icons/icon48.png"
-  },
-  "applications": {
-    "gecko": {
-      "id": "bskqus@example.com"
-    }
   },
   "permissions": [
     "activeTab",
@@ -19,13 +15,17 @@
     "<all_urls>",
     "webRequest"
   ],
+  "background": {
+        "scripts": ["background.js"]
+    },
   "content_scripts": [
     {
       "matches": [
         "*://*/*"
       ],
       "js": [
-        "content.js"
+        "content.js",
+        "content-script.js"
       ],
       "run_at": "document_end",
       "all_frames": true
