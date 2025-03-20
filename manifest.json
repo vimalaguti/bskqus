@@ -9,6 +9,12 @@
     "default_popup": "popup.html",
     "default_icon": "icons/icon48.png"
   },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "bskqus-extension@example.com",
+      "strict_min_version": "120.0"
+    }
+  },
   "permissions": [
     "activeTab",
     "storage",
